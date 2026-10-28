@@ -105,10 +105,22 @@ Oprettede et git-repo, kontrollerede at kun kode og dokumentation kom med, og pu
 ### 🤖 Copilot
 Fjernede `--import-secrets` og skrev en vejledning til `dotnet user-secrets set` i README. Pushede derefter.
 
+### 👤 Mig
+> Du må også meget gerne lægge en anonymiseret PDF op.
+
+### 🤖 Copilot
+Kontrollerede PDF'en for lækager og lagde den i `docs/` sammen med preview-billeder i README.
+
+### 👤 Mig
+> README skal også have en guide skrevet til en, der slet ikke har prøvet Git eller .NET, med alt hvad det kræver, med billeder.
+
+### 🤖 Copilot
+Skrev en trin-for-trin-guide til Windows og macOS: terminal, Git, .NET 10 SDK, clone, demo, user-secrets, kørsel og fejlfinding. Guiden har et flowdiagram og terminal-illustrationer med rigtigt output.
+
 ---
 
 ## Resultat
-- **Ca. 13 korte beskeder** fra idé til færdig app.
+- **Ca. 15 korte beskeder** fra idé til færdig app.
 - Koden er en .NET 10-konsolapp på ca. 2.250 linjer: FMC-klient, cache, klassificering, anonymisering, policy-udtræk og PDF-rapport.
 - En 17-siders PDF med diagrammer og en anonymiseret version, der er klar til fremvisning.
 - **Nul ændringer på produktions-FMC'en.** Der blev kun lavet GET-kald.
