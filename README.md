@@ -2,6 +2,14 @@
 
 Henter audit-loggen fra en Cisco FMC via REST API (**kun læsning** – der laves ingen ændringer på FMC'en) og genererer en PDF-rapport med QuestPDF.
 
+## Eksempel
+
+Se en anonymiseret eksempelrapport: [docs/eksempel-rapport-anonymiseret.pdf](docs/eksempel-rapport-anonymiseret.pdf) (17 sider).
+
+| Forside | Policy-udtræk |
+|---|---|
+| ![Forside](docs/preview-forside.png) | ![Policy-udtræk](docs/preview-policy.png) |
+
 ## Opsætning
 
 Kræver .NET 10 SDK. Credentials til FMC'en gemmes i **.NET user-secrets**, så der ikke ligger kodeord i klartekst

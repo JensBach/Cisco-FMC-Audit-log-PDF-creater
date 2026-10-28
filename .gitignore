@@ -16,6 +16,8 @@ dump/
 
 # Genererede rapporter (også den rigtige, ikke-anonymiserede)
 *.pdf
+# ...undtagen den kontrollerede, anonymiserede eksempelrapport
+!docs/eksempel-rapport-anonymiseret.pdf
 
 # --- Build-output ---
 bin/
