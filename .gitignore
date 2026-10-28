@@ -1,0 +1,40 @@
+# --- Følsomme data (må ALDRIG på GitHub) ---
+# Credentials (bruges kun til --import-secrets; selve hemmelighederne ligger i .NET user-secrets)
+.password
+*.password
+secrets.json
+appsettings.*.json
+.env
+.env.*
+
+# Rå data hentet fra FMC'en (brugere, IP'er, regler, objekter)
+auditlog-cache.json
+policy-cache.json
+*-cache.json
+fmcdump/
+dump/
+
+# Genererede rapporter (også den rigtige, ikke-anonymiserede)
+*.pdf
+
+# --- Build-output ---
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+publish/
+*.nupkg
+TestResults/
+
+# --- IDE / editor ---
+.idea/
+.vs/
+.vscode/
+*.user
+*.suo
+*.DotSettings.user
+*.swp
+
+# --- OS ---
+.DS_Store
+Thumbs.db
