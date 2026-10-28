@@ -8,7 +8,6 @@ if (opts.ContainsKey("help"))
     Console.WriteLine("""
         FMC Audit Log -> PDF (read-only)
 
-          --import-secrets [sti]   Flyt .password ind i .NET user-secrets og slet filen
           --days N                 Antal dage tilbage (default 30)
           --subsystem NAVN         Filtrer subsystem, fx Policies (default: alle)
           --domain UUID            Domain UUID (default: fra login)
@@ -26,9 +25,6 @@ if (opts.ContainsKey("help"))
         """);
     return 0;
 }
-
-if (opts.TryGetValue("import-secrets", out var importPath))
-    return SecretsImporter.Import(string.IsNullOrEmpty(importPath) ? null : importPath);
 
 var config = new ConfigurationBuilder()
     .AddUserSecrets<Program>(optional: true)
@@ -92,7 +88,7 @@ else
     var pass = config["Fmc:Password"];
     if (string.IsNullOrWhiteSpace(host) || string.IsNullOrWhiteSpace(user) || string.IsNullOrWhiteSpace(pass))
     {
-        Console.Error.WriteLine("Mangler credentials. Kør først: dotnet run -- --import-secrets");
+        Console.Error.WriteLine("Mangler credentials. Sæt dem med 'dotnet user-secrets set Fmc:Host <ip>' (samt Fmc:Username og Fmc:Password) – se README.");
         return 1;
     }
 

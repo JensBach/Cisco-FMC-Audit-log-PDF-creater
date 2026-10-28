@@ -4,11 +4,31 @@ Henter audit-loggen fra en Cisco FMC via REST API (**kun læsning** – der lave
 
 ## Opsætning
 
+Kræver .NET 10 SDK. Credentials til FMC'en gemmes i **.NET user-secrets**, så der ikke ligger kodeord i klartekst
+i projektmappen. De ligger i din brugerprofil (`~/.microsoft/usersecrets/<UserSecretsId>/secrets.json` på macOS/Linux,
+`%APPDATA%\Microsoft\UserSecrets\<UserSecretsId>\secrets.json` på Windows) og kommer aldrig med i git.
+
+Kør kommandoerne i projektmappen:
+
 ```bash
-# Flyt .password (host/username/password) ind i .NET user-secrets og slet clear-text filen
-dotnet run -- --import-secrets
-dotnet user-secrets list
+dotnet user-secrets set "Fmc:Host" "10.0.0.10"          # IP eller DNS-navn på FMC'en
+dotnet user-secrets set "Fmc:Username" "api-user"       # helst en dedikeret API-bruger med read-only rolle
+dotnet user-secrets set "Fmc:Password" "<kodeord>"
+dotnet user-secrets list                                # kontrollér opsætningen
 ```
+
+Tip: Tilføj et mellemrum foran kommandoen med kodeordet, så den ikke gemmes i shell-historikken (bash/zsh med
+`HISTCONTROL=ignorespace` / `setopt HIST_IGNORE_SPACE`).
+
+Valgfrit:
+
+```bash
+dotnet user-secrets set "Fmc:ExcludeUsers:0" "internaladmin"         # brugere der udelades (overskriver standard)
+dotnet user-secrets set "Fmc:ExcludeUsers:1" "@ANUBIS:system-user"
+dotnet user-secrets set "Fmc:AnonymizeTerms:0" "<kundenavn>"          # ekstra ord der skjules ved --anonymize
+```
+
+Alternativt kan værdierne sættes som miljøvariabler med prefix `FMCAUDIT_`, fx `FMCAUDIT_Fmc__Host=10.0.0.10`.
 
 ## Brug
 

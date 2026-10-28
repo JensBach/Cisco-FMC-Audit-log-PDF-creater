@@ -93,10 +93,22 @@ Det er ikke en rigtig bruger. FMC'en bruger navnet for handlinger uden en indlog
 ### 🤖 Copilot
 Det er denne fil og [`PROMPT.md`](PROMPT.md).
 
+### 👤 Mig
+> Push til GitHub.
+
+### 🤖 Copilot
+Oprettede et git-repo, kontrollerede at kun kode og dokumentation kom med, og pushede.
+
+### 👤 Mig
+> Der skal stå, hvordan man opsætter user-secrets, og vi skal fjerne `--import-secrets`. Push derefter.
+
+### 🤖 Copilot
+Fjernede `--import-secrets` og skrev en vejledning til `dotnet user-secrets set` i README. Pushede derefter.
+
 ---
 
 ## Resultat
-- **Ca. 10 korte beskeder** fra idé til færdig app.
+- **Ca. 13 korte beskeder** fra idé til færdig app.
 - Koden er en .NET 10-konsolapp på ca. 2.250 linjer: FMC-klient, cache, klassificering, anonymisering, policy-udtræk og PDF-rapport.
 - En 17-siders PDF med diagrammer og en anonymiseret version, der er klar til fremvisning.
 - **Nul ændringer på produktions-FMC'en.** Der blev kun lavet GET-kald.

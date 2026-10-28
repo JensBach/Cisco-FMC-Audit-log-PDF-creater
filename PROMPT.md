@@ -10,13 +10,8 @@ Lav en C#-konsolapp i **.NET 10**, der henter audit-loggen fra en **Cisco FMC** 
 FMC'en er en **produktions-FMC**. Appen må **kun lave GET-kald** (bortset fra login-tokenet). Der må under ingen omstændigheder laves ændringer på boksen.
 
 ## Credentials
-- Jeg har en `.password`-fil i formatet:
-  ```
-  host:<ip>
-  username:<api-bruger>
-  password:<kodeord>
-  ```
-- Lav en `--import-secrets`-kommando, der flytter værdierne ind i **.NET user-secrets** (`Fmc:Host`, `Fmc:Username`, `Fmc:Password`) og derefter overskriver og sletter filen, så der ikke ligger kodeord i klartekst.
+- Credentials læses fra **.NET user-secrets** (`Fmc:Host`, `Fmc:Username`, `Fmc:Password`), så der ikke ligger kodeord i klartekst i projektet.
+- Beskriv i README, hvordan man sætter dem med `dotnet user-secrets set`.
 - Understøt også miljøvariabler med prefix `FMCAUDIT_`.
 
 ## Hentning af data
