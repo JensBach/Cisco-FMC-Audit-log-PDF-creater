@@ -190,3 +190,14 @@ deployment-historik med enheder/versioner. FMC'en gemmer kun seneste ændringsti
 versioner kan ikke vises. Udtrækket hentes automatisk ved live-kørsel og gemmes i `policy-cache.json`, som bruges af `--from-json`.
 
 `auditlog-cache.json` og `policy-cache.json` indeholder rå (ikke-anonymiserede) data og bør ikke deles.
+
+## Licens
+
+Koden er udgivet under [MIT-licensen](LICENSE). Alle må frit bruge, kopiere, ændre og videredistribuere programmet,
+også kommercielt, så længe licensteksten følger med. Programmet leveres "som det er" uden garanti.
+
+**Bemærk om QuestPDF:** PDF'en laves med [QuestPDF](https://www.questpdf.com), som har sin egen licens. Programmet bruger
+QuestPDF's *Community License*, som er gratis for bl.a. privatpersoner, open source-projekter og virksomheder med under
+1 mio. USD i årlig omsætning. Større virksomheder, der bruger programmet i drift, skal selv have en
+[QuestPDF Professional- eller Enterprise-licens](https://www.questpdf.com/license/). Læs QuestPDF's
+[guide til licensvalg](https://www.questpdf.com/license/guide.html).
